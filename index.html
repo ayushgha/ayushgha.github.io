@@ -1,288 +1,679 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Parallax Template - uplusion23</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.5.5/jquery.smooth-scroll.min.js"></script>
-  </head>
-  <script>
-    function EasyPeasyParallax() {
-	scrollPos = $(this).scrollTop();
-	$('.p1').css({
-		'background-position' : '50% ' + (-scrollPos/4)+"px"
-	});
-  $('.p2').css({
-		'background-position' : '50% ' + (-scrollPos/8)+"px"
-	});
-  $('.p3').css({
-		'background-position' : '70% ' + (-scrollPos/16)+"px"
-	});
-	$('.parallax-text').css({
-		'margin-top': (scrollPos/2)+"px",
-		'opacity': 1-(scrollPos/230)
-	});
-}
-$(document).ready(function(){
-	$(window).scroll(function() {
-		EasyPeasyParallax();
-	});
-});
-  </script>
-  <style>
-    body {
-  background-color: #ECECEC;
-  color: #444444;
-  padding: 0;
-  margin: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: 'Roboto';
-}
-.left-underline {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  overflow: hidden;
-}
-.left-underline:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  background: #ECECEC;
-  height: 4px;
-  -webkit-transition-property: right;
-  transition-property: right;
-  -webkit-transition-duration: 0.15s;
-  transition-duration: 0.15s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.left-underline:hover:before, .left-underline:focus:before, .left-underline:active:before {
-  right: 0;
-}
-div.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ee6e73;
-  -webkit-box-shadow: 0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  box-shadow:         0px 2px 6px 0px rgba(50, 50, 50, 0.75);
-  z-index: 9999999;
-}
-div.navbar > ul.navbar-container {
-  list-style-type: none;
-  margin: 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  overflow: hidden;
-}
-div.navbar > ul > li.nav-item {
-  float: right;
-  background-color: rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-}
-div.navbar > ul > li.active {
-  background-color: rgba(0, 0, 0, 0.18);
-}
-div.navbar > ul > li:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-a.nav-button {
-  font-family: 'Roboto';
-  text-decoration: none;
-  line-height: 60px;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgba(228, 241, 254, 1);
-  transition: all 0.5s ease;
-}
-a.nav-button:hover {
-  text-decoration: none;
-}
-li.active > a.nav-button {
-  cursor: default;
-}
-.brand-logo {
-  float: left;
-  cursor: default;
-}
-.parallax {
-  height: 70vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-.parallax.p1 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-70374.jpg) no-repeat fixed 50% 0;
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p2 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-126549.jpg) no-repeat fixed 50% 0;
-  background-size: cover;
-  color: #fff;
-}
-.parallax.p3 {
-  background: url(http://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-95766.jpg) no-repeat fixed 70% 0;
-  background-size: cover;
-  color: #fff;
-}
-.parallax-text {
-  width: 24em;
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  border: .5em solid #fff;
-  margin-left: -10%;
-  padding: 2em 0;
-  text-align: center;
-  z-index: 999;
-}
-.parallax > div.blur-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-} 
-hgroup{
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #fff;
-  border: 5px solid #fff;
-  padding: .5em 3em;
-  background-color: rgba(0,0,0,.2);
-  z-index: 2;
-}
-.row {
-  width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  min-height: 150px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.row > .col-3 {
-  width: 30%;
-  height: 100%;
-  box-sizing: border-box;
-  float: left;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-footer {
-  width: 100%;
-  padding-top: 20px;
-  display: block;
-  background-color: #ee6e73;
-}
-.footer-copyright {
-  font-weight: 300;
-  overflow: hidden;
-  height: 50px;
-  line-height: 50px;
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(51, 51, 51, 0.08);
-}
-.container {
-  width: 85%;
-  padding: 0 1.5rem;
-  margin: 0 auto;
-  max-width: 1280px;
-}
-footer p {
-  border-left: 3px solid #ffcdd2;
-  padding-left: 15px;
-  text-indent: 20px;
-  color: #ececec;
-}
+    <title>Expert &mdash; Onepage Website Template by Free-Template.co</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Free-Template.co" />
 
-  </style>
-  <body>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-    <div class="navbar">
-      <ul class="navbar-container">
-        <li><a href="#" class="left-underline nav-button brand-logo">Brand Logo</a></li>
-        <li class="nav-item"><a href="#section-3" class="left-underline nav-button" data-scroll>Wallet</a></li>
-        <li class="nav-item"><a href="#section-2" class="left-underline nav-button" data-scroll>Pictures</a></li>
-        <li class="nav-item active"><a href="#section-1" class="left-underline nav-button" data-scroll>Home</a></li>
-      </ul>
+    <!-- 
+    //////////////////////////////////////////////////////
+
+    FREE TEMPLATE 
+    DESIGNED & DEVELOPED by free-template.co
+      
+    Website:    https://free-template.co
+    Facebook:   https://www.facebook.com/FreeDashTemplate.co
+    Twitter:    https://twitter.com/Free_Templateco
+
+    //////////////////////////////////////////////////////
+    -->
+
+    <link rel="shortcut icon" href="ftco-32x32.png">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Muli:300,400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <div class="parallax p1" id="section-1">
-      <hgroup>
-        <h1>Hello.</h1>
-        <h2>I’m a startup.</h2>
-      </hgroup>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <h1>First Section Col1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus maximus quam et dignissim. Praesent felis arcu, euismod et ullamcorper ut, condimentum ut ante. Vestibulum vel libero commodo, aliquam libero eu, gravida arcu. Proin scelerisque faucibus ligula quis efficitur. Donec at sollicitudin purus, suscipit tempus augue. Sed imperdiet volutpat sapien at hendrerit. Mauris egestas ex a quam tincidunt gravida. Quisque interdum tempor lacinia. Nulla eget varius purus. Integer non sollicitudin dui. Phasellus sem turpis, maximus in auctor vulputate, porta id nunc.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet est id leo facilisis, quis egestas erat vehicula. Aenean nec facilisis leo, et tristique lorem. Aliquam porttitor, elit ac ornare lacinia, sapien augue sagittis dolor, tempor ultricies lorem arcu et ante. Nulla facilisi. Praesent facilisis lacus at blandit maximus. Ut at libero nisi. Cras eu augue tellus. Nam pretium eget nisi non viverra. Maecenas eget tincidunt nibh, vitae interdum dolor.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col3</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nibh dolor. Cras rutrum molestie ligula posuere hendrerit. Donec luctus vitae elit in gravida. Duis in viverra nunc. Nunc et metus blandit, blandit quam in, laoreet mi. In vitae mauris sit amet tellus dictum rhoncus malesuada non arcu. Ut lacus lacus, dignissim at commodo id, dapibus sed felis. Cras in nunc id est lobortis euismod. Sed egestas nulla et augue sagittis lacinia. Quisque finibus bibendum risus, vitae accumsan ante mollis ac. Aliquam fermentum, mauris eu gravida dictum, tortor risus finibus nibh, in tincidunt velit tortor vehicula mi.</p>
-      </div>
-    </div>
-    <div class="parallax p2" id="section-2">
-      <hgroup>
-        <h1>Well</h1>
-        <h2>This is some bold info!</h2>
-      </hgroup>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <h1>First Section Col1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus maximus quam et dignissim. Praesent felis arcu, euismod et ullamcorper ut, condimentum ut ante. Vestibulum vel libero commodo, aliquam libero eu, gravida arcu. Proin scelerisque faucibus ligula quis efficitur. Donec at sollicitudin purus, suscipit tempus augue. Sed imperdiet volutpat sapien at hendrerit. Mauris egestas ex a quam tincidunt gravida. Quisque interdum tempor lacinia. Nulla eget varius purus. Integer non sollicitudin dui. Phasellus sem turpis, maximus in auctor vulputate, porta id nunc.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col2</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet est id leo facilisis, quis egestas erat vehicula. Aenean nec facilisis leo, et tristique lorem. Aliquam porttitor, elit ac ornare lacinia, sapien augue sagittis dolor, tempor ultricies lorem arcu et ante. Nulla facilisi. Praesent facilisis lacus at blandit maximus. Ut at libero nisi. Cras eu augue tellus. Nam pretium eget nisi non viverra. Maecenas eget tincidunt nibh, vitae interdum dolor.</p>
-      </div>
-      <div class="col-3">
-        <h1>First Section Col3</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac nibh dolor. Cras rutrum molestie ligula posuere hendrerit. Donec luctus vitae elit in gravida. Duis in viverra nunc. Nunc et metus blandit, blandit quam in, laoreet mi. In vitae mauris sit amet tellus dictum rhoncus malesuada non arcu. Ut lacus lacus, dignissim at commodo id, dapibus sed felis. Cras in nunc id est lobortis euismod. Sed egestas nulla et augue sagittis lacinia. Quisque finibus bibendum risus, vitae accumsan ante mollis ac. Aliquam fermentum, mauris eu gravida dictum, tortor risus finibus nibh, in tincidunt velit tortor vehicula mi.</p>
-      </div>
-    </div>
-    <div class="parallax p3">
-      <hgroup>
-        <h1>Well</h1>
-        <h2>This is some bold info!</h2>
-      </hgroup>
-    </div>
-    <footer>
-      <div class="row" id="section-3">
-        <div class="col-3">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum tortor ac dui malesuada, id molestie elit aliquam. Fusce laoreet nisl id tellus molestie mattis. Fusce vitae ante quis augue imperdiet rutrum a vitae purus. Etiam tincidunt enim id turpis varius, in condimentum elit.</p>
+  </div>
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          © 2011-2015 uplusion23, All rights reserved.
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+      
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="site-logo"><a href="index.html" class="text-uppercase">Expert</a></div>
+          <div>
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-xl-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#work-section" class="nav-link">Projects</a></li>
+                <li><a href="#process-section" class="nav-link">Process</a></li>
+                <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
+                <li><a href="#services-section" class="nav-link">Services</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          <div class="ml-auto">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-xl-block">
+                <li><a href="#pricing-section" class="nav-link">Pricing</a></li>
+                <li class="cta"><a href="#contact-section" class="nav-link"><span class="border bg-danger rounded text-white border-danger">Contact</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-xl-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
+    <div class="intro-section custom-owl-carousel" id="home-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mr-auto" data-aos="fade-up">
+
+            <div class="owl-carousel slide-one-item-alt-text">
+              <div class="slide-text">
+                <h1>We Do Awesome Things</h1>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+                <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-light py-3 px-5">Get Started</a></p>
+              </div>
+              <div class="slide-text">
+                <h1>Free-Template.co</h1>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+                <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-light py-3 px-5">Get Started</a></p>
+              </div>
+              <div class="slide-text">
+                <h1>High Quality Website Templates</h1>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+                <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-light py-3 px-5">Get Started</a></p>
+              </div>
+              <div class="slide-text">
+                <h1>We do things right.</h1>
+                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
+                <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-light py-3 px-5">Get Started</a></p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-6 ml-auto"  data-aos="fade-up" data-aos-delay="100">
+                        
+            <div class="owl-carousel slide-one-item-alt">
+              <img src="images/img_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/img_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/img_3.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/img_4.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            </div>
+
+            <div class="owl-custom-direction">
+              <a href="#" class="custom-prev"><span class="icon-keyboard_arrow_left"></span></a>
+              <a href="#" class="custom-next"><span class="icon-keyboard_arrow_right"></span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section section-1">
+      
+    
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mr-auto mb-5"  data-aos="fade-up">
+
+            <div class="mb-5">
+              <h2 class="section-title">Love Our Works</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+              <p class="mb-5">Aperiam neque id, illum laudantium autem vero quae debitis tempora modi. Ipsa molestias enim in rem et incidunt beatae fugit, ab quam optio atque maiores facere est quidem, veritatis commodi.</p>
+
+              <ul class="ul-check list-unstyled success">
+                <li>Aperiam neque id illum laudantium</li>
+                <li>Maiores facere est quidem</li>
+                <li>Laudantium autem vero</li>
+              </ul>
+            </div>
+
+            
+          </div>
+
+          <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="100">
+            <div class="image-absolute-box">
+              <div class="box">
+                <div class="icon-wrap"><span class="flaticon-vector"></span></div>
+                <h3>Pixel Perfect Templates</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi aspernatur eum eius inventore facilis.</p>
+                <p class="mb-0">Visit <a href="#" class="text-danger">Free-Template.co</a></p>
+              </div>
+              <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container section-counter">
+      <div class="row">
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="">
+          <div class="counter d-flex align-items-start mb-5">
+            <div class="icon-wrap"><span class="flaticon-reload text-primary"></span></div>
+
+            <div class="counter-text">
+              <strong class="number" data-number="360">0</strong>
+              <span>Creativity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="counter d-flex align-items-start">
+            <div class="icon-wrap"><span class="flaticon-download text-primary"></span></div>
+            <div class="counter-text">
+              <strong class="number" data-number="4500">0</strong>
+              <span>WordPress Themes </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="counter d-flex align-items-start mb-5">
+            <div class="icon-wrap"><span class="flaticon-monitor text-primary"></span></div>
+            <div class="counter-text">
+              <strong class="number" data-number="120">0</strong>
+              <span>HTML5 / CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="counter d-flex align-items-start">
+            <div class="icon-wrap"><span class="flaticon-chat text-primary"></span></div>
+            <div class="counter-text">
+              <strong class="number" data-number="3913">0</strong>
+              <span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section section-2" id="work-section" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5">
+            <h2 class="section-title">Our Projects</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+      </div>
+        
+
+
+
+      <div class="owl-carousel nonloop-block-13">
+
+          <a class="work-thumb" href="images/img_1.jpg" data-fancybox="gallery">
+            <div class="work-text">
+              <h3>Project Name Here</h3>
+              <span class="category">Website</span>
+            </div>
+            <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+          </a> 
+          
+          <a class="work-thumb" href="images/img_2.jpg" data-fancybox="gallery">
+            <div class="work-text">
+              <h3>Project Name Here</h3>
+              <span class="category">Illustration</span>
+            </div>
+            <img src="images/img_2.jpg" alt="Image" class="img-fluid">
+          </a>
+
+          <a class="work-thumb" href="images/img_3.jpg" data-fancybox="gallery">
+            <div class="work-text">
+              <h3>Project Name Here</h3>
+              <span class="category">Branding</span>
+            </div>
+            <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+          </a>
+
+          <a class="work-thumb" href="images/img_4.jpg" data-fancybox="gallery">
+            <div class="work-text">
+              <h3>Project Name Here</h3>
+              <span class="category">Web Development</span>
+            </div>
+            <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+          </a>
+
+          <a class="work-thumb" href="images/img_1.jpg" data-fancybox="gallery">
+            <div class="work-text">
+              <h3>Project Name Here</h3>
+              <span class="category">Design</span>
+            </div>
+            <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+          </a>
+      </div>
+    
+
+    </div>
+
+
+    <div class="site-section section-2 bg-light" id="process-section" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5">
+            <h2 class="section-title">Our Approach</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="process bg-white rounded">
+              <div>
+                <span class="flaticon-glasses display-4 text-primary mb-4 d-inline-block"></span>
+                <h3>Data Gathering</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="process bg-white rounded">
+              <div>
+                <span class="flaticon-vector display-4 text-primary mb-4 d-inline-block"></span>
+                <h3>Implementation</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="process bg-white rounded">
+              <div>
+                <span class="flaticon-monitor display-4 text-primary mb-4 d-inline-block"></span>
+                <h3>Launch</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section testimonial-wrap custom-owl-carousel" id="testimonials-section">
+      <div class="container">
+        <div class="row text-center justify-content-center mb-5"  data-aos="fade-up">
+          <div class="col-lg-6 mb-5 text-center">
+            <h2 class="section-title w-100 mx-auto">Testimonials</h2>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+        <div class="row align-items-center"  data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 mr-auto">
+
+            <div class="owl-carousel slide-one-item-alt-text">
+              <div class="slide-text">
+                <blockquote>
+                  <p><span>&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos corrupti, obcaecati repudiandae, animi ad quos. Eius expedita ipsa qui autem.<span>&rdquo;</span></p>
+                  <p class="author">&mdash;  Jean Doe</p>
+                </blockquote>
+              </div>
+              <div class="slide-text">
+                <blockquote>
+                  <p><span>&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos corrupti, obcaecati repudiandae, animi ad quos. Eius expedita ipsa qui autem.<span>&rdquo;</span></p>
+                  <p class="author">&mdash;  Gregg Pollach</p>
+                </blockquote>
+              </div>
+              <div class="slide-text">
+               <blockquote>
+                  <p><span>&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos corrupti, obcaecati repudiandae, animi ad quos. Eius expedita ipsa qui autem.<span>&rdquo;</span></p>
+                  <p class="author">&mdash;  Rober Kenneth</p>
+                </blockquote>
+              </div>
+              <div class="slide-text">
+                <blockquote>
+                  <p><span>&ldquo;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos corrupti, obcaecati repudiandae, animi ad quos. Eius expedita ipsa qui autem.<span>&rdquo;</span></p>
+                  <p class="author">&mdash;  Joshua Smith</p>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-6 ml-auto"  data-aos="fade-up" data-aos-delay="200">
+                        
+            <div class="owl-carousel slide-one-item-alt">
+              <img src="images/person_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/person_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/person_3.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+              <img src="images/person_4.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            </div>
+
+            <div class="owl-custom-direction">
+              <a href="#" class="custom-prev"><span class="icon-keyboard_arrow_left"></span></a>
+              <a href="#" class="custom-next"><span class="icon-keyboard_arrow_right"></span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-light" id="services-section" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-5">
+            <h2 class="section-title">Services</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+      </div>
+
+        
+      <div class="owl-carousel nonloop-block-14">
+        
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-reload"></span></span>
+            <h3>Branding Design</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-download"></span></span>
+            <h3>WordPress Integration</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-monitor"></span></span>
+            <h3>Web Development</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-chat"></span></span>
+            <h3>HTML5/CSS3</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-glasses"></span></span>
+            <h3>Web Templates</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div>
+            <span class="custom-icon-wrap"><span class="flaticon-vector"></span></span>
+            <h3>Creative Design</h3>
+            <p>Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+    <div class="pricing-wrap bg-primary pricing-counter" id="pricing-section" data-aos="fade">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 text-center">
+            <h2 class="section-title mb-3 text-center text-white mx-auto">Choose Your Plan</h2>
+            <p class="mb-5 section-desc">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div class="pricing">
+            <h3>Starters</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">
+              <span>Starting at</span>
+              <strong>$<em class="number" data-number="7">0</em></strong>
+              <span>Per Month</span>
+            </div>
+
+            <p class="description-2 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum enim nobis aspernatur saepe dolores?</p>
+
+            <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-primary py-3 px-5">Get Started</a></p>
+            
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing pricing-popular">
+            <h3>Premium</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">
+              <span>Starting at</span>
+              <strong>$<em class="number" data-number="75">0</em></strong>
+              <span>Per Month</span>
+            </div>
+
+            <p class="description-2 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum enim nobis aspernatur saepe dolores?</p>
+
+            <p><a href="https://free-template.co/" target="_blank" class="btn  btn-outline-danger py-3 px-5">Get Started</a></p>
+            
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing">
+            <h3>Enterprise</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div class="price">
+              <span>Starting at</span>
+              <strong>$<em class="number" data-number="390">0</em></strong>
+              <span>Per Month</span>
+            </div>
+
+            <p class="description-2 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum enim nobis aspernatur saepe dolores?</p>
+
+            <p><a href="https://free-template.co/" target="_blank" class="btn btn-outline-primary py-3 px-5">Get Started</a></p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section"  data-aos="fade">
+      <div class="container">
+        <a href="https://vimeo.com/325355987" class="video-img-bg" data-fancybox data-ratio="2">
+          <span class="play-button">
+            <span class="icon-play"></span>
+          </span>
+          <img src="images/video_bg.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+    <div class="site-section" id="contact-section"  data-aos="fade">
+      <div class="container">
+
+        <div class="row align-items-center">
+          <div class="col-md-5 order-1 order-md-2 mb-5 mb-md-0">
+            <img src="images/about_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+          </div>
+          <div class="col-md-6 mr-auto order-2 order-md-1">
+            
+            <h2 class="section-title mb-3">Contact Us</h2>
+            <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+          
+            <form method="post">
+              <div class="form-group row">
+                <div class="col-md-6 mb-4">
+                  <input type="text" class="form-control" placeholder="First name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last name">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6">
+                  
+                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  
+     
+    <footer class="footer-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
+          </div>
+
+          <div class="col-md-3 ml-auto">
+            <h3>Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#home-section" class="smoothscroll">Home</a></li>
+              <li><a href="#work-section" class="smoothscroll">Projects</a></li>
+              <li><a href="#process-section" class="smoothscroll">Process</a></li>
+              <li><a href="#testimonials-section" class="smoothscroll">Testimonials</a></li>
+              <li><a href="#services-section" class="smoothscroll">Services</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Subscribe</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
+            <form action="#">
+              <div class="d-flex mb-5">
+                <input type="text" class="form-control rounded-0" placeholder="Email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p>
+          <small class="block">&copy; <script>document.write(new Date().getFullYear());</script> <strong>Expert</strong> One Page Free Template. All Rights Reserved. <br> Designed &amp; Developed by <a href="https://free-template.co/" target="_blank">Free-Template.co</a></small> 
+          </p>
+            
+            </div>
+          </div>
+          
         </div>
       </div>
     </footer>
+
+  
+    
+  </div> <!-- .site-wrap -->
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/main.js"></script>
+    
+  <!-- Google Ads -->
+<style>.adsense_fixed{position:fixed;bottom:-10px;width:100%;z-index:999999999999}.adsense_content{width:720px;margin:0 auto;position:relative;background:#fff}.adsense_btn_close,.adsense_btn_info{font-size:12px;color:#fff;height:20px;width:20px;vertical-align:middle;text-align:center;background:#000;top:0;left: 0; margin-left:-20px;position:absolute;z-index:99999999;font-family:Georgia;cursor:pointer;line-height:18px}.adsense_btn_info{left:0;display:none;font-family:Georgia;font-style:italic}.adsense_btn_close{display:block;left:0}.adsense_info_content{display:none;width:260px;height:340px;position:absolute;top:-360px;left:-24px;background:rgba(255,255,255,.95);font-size:14px;padding:20px;font-family:Arial;border-radius:4px;-webkit-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);-moz-box-shadow:0 1px 26px -2px rgba(0,0,0,.3);box-shadow:0 1px 26px -2px rgba(0,0,0,.3)}.adsense_info_content:after{content:'';position:absolute;left:25px;top:100%;width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #fff;clear:both}.adsense_info_content #adsense_h3{color:#000;margin:0;font-size:18px!important;font-family:Arial!important;margin-bottom:20px!important}.adsense_info_content .adsense_p{color:#888;font-size:13px!important;line-height:20px;font-family:Arial!important;margin-bottom:20px!important}.adsense_fh5co-team{color:#000;font-style:italic}</style><div class=adsense_fixed><div class=adsense_content><span class=adsense_btn_close title="Hide Ads">x</span><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle data-ad-client=ca-pub-9294834522530836 data-ad-slot=4203474109 style=display:inline-block;width:728px;height:90px></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><script>$(function(){$(".adsense_btn_close").click(function(){$(this).closest(".adsense_fixed").css("display","none")}),$(".adsense_btn_info").click(function(){$(".adsense_info_content").is(":visible")?$(".adsense_info_content").css("display","none"):$(".adsense_info_content").css("display","block")})})</script></div></div>
+<!-- END ads -->
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-109084231-1', 'auto');
+  ga('send', 'pageview');
+</script>
   </body>
 </html>
